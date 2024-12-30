@@ -7,7 +7,7 @@
 		{
 			"Name": "NNETutor",
 			"Type": "Runtime",
-			"LoadingPhase": "Default",
+			"LoadingPhase": "PostConfigInit",
 			"AdditionalDependencies": [
 				"CoreUObject"
 			]

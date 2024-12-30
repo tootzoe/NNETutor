@@ -8,13 +8,20 @@ public class NNETutor : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-        PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput" , "NNE" });
+        PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine",
+            "InputCore", "EnhancedInput" , "Projects" , "RenderCore", "RHI", "NNE" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
 		// Uncomment if you are using Slate UI
-		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
+         PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
 		
+         PublicIncludePaths.AddRange(
+                     new string[] {
+                         System.IO.Path.Combine(EngineDirectory, "Source/Runtime/Renderer/Private")
+                     }
+                 );
+
 		// Uncomment if you are using online features
 		// PrivateDependencyModuleNames.Add("OnlineSubsystem");
 

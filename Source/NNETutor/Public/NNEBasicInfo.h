@@ -9,7 +9,7 @@
 /**
  * 
  */
-UCLASS( Blueprintable )
+UCLASS( Blueprintable , Category = "TOOTzoe" )
 class NNETUTOR_API UNNEBasicInfo : public UObject
 {
 	GENERATED_BODY()

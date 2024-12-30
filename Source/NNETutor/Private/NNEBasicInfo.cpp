@@ -12,8 +12,7 @@
 #include "NNEModelData.h"
 #include "Engine/AssetManager.h"
 #include "Engine/StreamableManager.h"
-
-
+#include "Misc/Paths.h"
 
 
 void UNNEBasicInfo::FetchAllNNE_Runtimes()
@@ -23,14 +22,15 @@ void UNNEBasicInfo::FetchAllNNE_Runtimes()
 
    // TArrayView< TWeakInterfacePtr<INNERuntime > > tmpINNE = UE::NNE::GetAllRuntimeNames()
 
-    TArrayView<const FString> names = UE::NNE::GetAllRuntimeNames ();
+    // TArrayView<const FString> names = UE::NNE::GetAllRuntimeNames ();
 
-    for  ( const FString inneName : names ) {
-            UE_LOG(LogTemp, Warning, TEXT("NNE name:  %s  "), *inneName);
-    }
+    // for  ( const FString inneName : names ) {
+    //         UE_LOG(LogTemp, Warning, TEXT("NNE name:  %s  "), *inneName);
+    // }
 
+     FString p =  FPaths::GameSourceDir();  // =  D:/workprj/uePrj/NNETutor/Source/
 
-
+     UE_LOG(LogTemp, Warning, TEXT(" p == %s") , *p );
 
 }
 
@@ -105,7 +105,7 @@ void UNNEBasicInfo::LoadModel_MNIST8()
 
    // myOutputData.SetNumZeroed(inputTensorShapes[0].Volume());
 
-    UE_LOG(LogTemp, Error, TEXT(" Everythings goes well here...."));
+    UE_LOG(LogTemp, Error, TEXT(" Everythings goes well here....."));
 }
 
 void UNNEBasicInfo::LazyLoadModel_MNIST8()
@@ -115,7 +115,7 @@ void UNNEBasicInfo::LazyLoadModel_MNIST8()
 
     TObjectPtr<UNNEModelData> myModelDat = Cast<UNNEModelData>(  mnist8Path.ResolveObject() );
 
-    if(myModelDat.IsNull()) {
+    if(!myModelDat) {
         UE_LOG(LogTemp, Warning, TEXT("myModelDat null..."));
     }else
     {

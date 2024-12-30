@@ -1,0 +1,51 @@
+
+
+#include "/Engine/Public/Platform.ush"
+#include "/Engine/Private/Common.ush"
+
+int Width;
+int Height;
+
+Texture2D InputTexture;
+SamplerState InputTextureSampler;
+RWBuffer<float> InputBuffer;
+
+RWBuffer<float> OutputBuffer;
+
+
+[numthreads(THREAD_GROUP_SIZE, THREAD_GROUP_SIZE, 1)]
+void PrepareInput(in const uint3 DispatchThreadID : SV_DispatchThreadID)
+{
+    if (DispatchThreadID.x >= Width || DispatchThreadID.y >= Height)
+    {
+        return;
+    }
+
+	float X = (float)DispatchThreadID.x / (Width  - 1);
+	float Y = (float)DispatchThreadID.y / (Height - 1);
+	float4 Color = InputTexture.Sample(InputTextureSampler, float2(X, Y));
+
+    int Idx = DispatchThreadID.y * Width + DispatchThreadID.x;
+    int Offset1 = Width * Height;
+    int Offset2 = Offset1 + Offset1;
+    InputBuffer[Idx] = Color.r;
+    InputBuffer[Idx + Offset1] = Color.g;
+    InputBuffer[Idx + Offset2] = Color.b;
+}
+
+
+float4 ProcessOutput(float4 Position : SV_POSITION) : SV_Target0
+{
+    float X = Position.x * float(Width  - 1) / (float)Width;
+    float Y = Position.y * float(Height - 1) / (float)Height;
+
+    int PixelX = clamp((int)X, 0, Width);
+    int PixelY = clamp((int)Y, 0, Height);
+
+    int Idx = PixelY * Width + PixelX;
+    int Offset1 = Width * Height;
+    int Offset2 = Offset1 + Offset1;
+    float3 Color = float3(OutputBuffer[Idx], OutputBuffer[Idx + Offset1], OutputBuffer[Idx + Offset2]);
+
+    return float4(Color, 1.0);
+}

@@ -23,7 +23,7 @@ DEFINES += "WITH_EDITORONLY_DATA=1"
 
 ## this project only
 
-
+##
 
 
 INCLUDEPATH += ../Intermediate/Build/Win64/UnrealEditor/Inc/$$PRJNAMETOOT/UHT
@@ -37,19 +37,27 @@ INCLUDEPATH += $$PRJNAMETOOT/Public $$PRJNAMETOOT/Private
 #
 include(defs.pri)
 include(inc.pri)
-
+#
+## this project only
+INCLUDEPATH += $$UESRCROOT/Runtime/Renderer/Private
+##
 #
 #
 
 DISTFILES += \
     NNETutor.Target.cs \
     NNETutor/NNETutor.Build.cs \
+    NNETutor/Shaders/NeuralPostProcessing.usf \
     NNETutorEditor.Target.cs
 
 HEADERS += \
     NNETutor/NNETutor.h \
-    NNETutor/Public/NNEBasicInfo.h
+    NNETutor/Public/NNEBasicInfo.h \
+    NNETutor/Public/NeuralPostProcessingCS.h \
+    NNETutor/Public/NeuralPostProcessingViewExtension.h
 
 SOURCES += \
     NNETutor/NNETutor.cpp \
-    NNETutor/Private/NNEBasicInfo.cpp
+    NNETutor/Private/NNEBasicInfo.cpp \
+    NNETutor/Private/NeuralPostProcessingCS.cpp \
+    NNETutor/Private/NeuralPostProcessingViewExtension.cpp
