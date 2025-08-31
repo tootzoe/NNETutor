@@ -21,6 +21,7 @@
 //------------------------------------------------------------------------
 
 
+
 #include "NeuralPostProcessingCS.h"
 
 void FNeuralPostProcessingPrepareInputCS::ModifyCompilationEnvironment(const FGlobalShaderPermutationParameters& InParameters, FShaderCompilerEnvironment& OutEnvironment)

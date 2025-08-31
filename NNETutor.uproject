@@ -36,6 +36,10 @@
 		{
 			"Name": "NNERuntimeBasicCpu",
 			"Enabled": true
+		},
+		{
+			"Name": "NNERuntimeOpenVINO",
+			"Enabled": true
 		}
 	]
 }

@@ -46,10 +46,57 @@ include(defs.pri)
 include(inc.pri)
 #
 ## this project only
-## INCLUDEPATH += $$UESRCROOT/Runtime/Renderer/Private
+##
+#### PLUGINSROOT 1
 PLUGINSROOT = ../Plugins
-#INCLUDEPATH += $$PLUGINSROOT/UIExtension/Source/Public
+###
+###
+#### Start Plugins Module 1 Start
+PLUGINNAME1  = NNERuntimeOpenVINO
+PLUGINMODULE1  = NNERuntimeOpenVINO
+DEFINES += "NNERUNTIMEOPENVINO_API=__declspec(dllexport)"
 #
+INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME1/Intermediate/Build/Win64/UnrealEditor/Inc/$$PLUGINMODULE1/UHT
+INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME1/Source/$$PLUGINMODULE1
+INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME1/Source/$$PLUGINMODULE1/Public
+INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME1/Source/$$PLUGINMODULE1/Private
+########## End Plugins Module 1 End
+#
+PLUGINNAME2  = NNERuntimeOpenVINO
+PLUGINMODULE2  = NNERuntimeOpenVINOEditor
+DEFINES += "NNERUNTIMEOPENVINOEDITOR_API=__declspec(dllexport)"
+#
+INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME2/Intermediate/Build/Win64/UnrealEditor/Inc/$$PLUGINMODULE2/UHT
+INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME2/Source/$$PLUGINMODULE2
+INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME2/Source/$$PLUGINMODULE2/Public
+INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME2/Source/$$PLUGINMODULE2/Private
+########## End Plugins Module 2 End
+#
+#
+PLUGINNAME3  = NNERuntimeOpenVINO/Source/ThirdParty
+PLUGINMODULE3  = OpenVino
+DEFINES += "OPENVINO_API=__declspec(dllexport)"
+#
+INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME3/Intermediate/Build/Win64/UnrealEditor/Inc/$$PLUGINMODULE3/UHT
+TOOTZ = $$PLUGINSROOT/$$PLUGINNAME3/$$PLUGINMODULE3/Internal/openvino/c
+INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME3/$$PLUGINMODULE3/Internal/openvino/c
+INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME3/$$PLUGINMODULE3/Internal/openvino/c/auto
+INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME3/$$PLUGINMODULE3/Internal/openvino/c/gpu
+#INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME3/Source/$$PLUGINMODULE2/Public
+#INCLUDEPATH += $$PLUGINSROOT/$$PLUGINNAME3/Source/$$PLUGINMODULE2/Private
+########## End Plugins Module 3 End
+#
+
+
+######## for debug .pro file
+#QMAKE_LFLAGS += -s
+#QMAKE_CXXFLAGS += "-std=c++11"
+#message($$system(date -I))
+#TOOTBDATE = '\\"$$system(date -I\'minute\')\\"'
+#DEFINES += TOOTBUILDDATE=\"$${TOOTBDATE}\"
+#message($${TOOTDebugStr})
+##
+##
 ## this project only
 INCLUDEPATH += $$UESRCROOT/Runtime/Renderer/Private
 ##
@@ -59,20 +106,6 @@ INCLUDEPATH += $$UESRCROOT/Runtime/Renderer/Private
 #
 
 HEADERS += \
-    AdventurePrj/AdventurePrj.h \
-    AdventurePrj/Public/AdventureCharacter.h \
-    AdventurePrj/Public/AdventureGM.h \
-    AdventurePrj/Public/Data/EquippableToolDefinition.h \
-    AdventurePrj/Public/Data/ItemData.h \
-    AdventurePrj/Public/Data/ItemDefinition.h \
-    AdventurePrj/Public/EquippableToolBase.h \
-    AdventurePrj/Public/InventoryComp.h \
-    AdventurePrj/Public/PickupBase.h \
-    AdventurePrj/Public/Projectile/FirstPersionProjectile.h \
-    AdventurePrj/Public/Tools/DartLauncher.h \
-    AdventurePrj/Public/UI/DragWidget.h \
-    AdventurePrj/Public/UI/HUDLayout.h \
-    AdventurePrj/Public/UI/TootWindow.h \
     NNETutor/NNETutor.h \
     NNETutor/Public/NNEBasicInfo.h \
     NNETutor/Public/NeuralPostProcessingCS.h \
@@ -80,28 +113,13 @@ HEADERS += \
     NNETutor/Shaders/NeuralPostProcessing.usf
 
 SOURCES += \
-    AdventurePrj/AdventurePrj.cpp \
-    AdventurePrj/Private/AdventureCharacter.cpp \
-    AdventurePrj/Private/AdventureGM.cpp \
-    AdventurePrj/Private/Data/EquippableToolDefinition.cpp \
-    AdventurePrj/Private/Data/ItemDefinition.cpp \
-    AdventurePrj/Private/EquippableToolBase.cpp \
-    AdventurePrj/Private/InventoryComp.cpp \
-    AdventurePrj/Private/PickupBase.cpp \
-    AdventurePrj/Private/Projectile/FirstPersionProjectile.cpp \
-    AdventurePrj/Private/Tools/DartLauncher.cpp \
-    AdventurePrj/Private/UI/DragWidget.cpp \
-    AdventurePrj/Private/UI/HUDLayout.cpp \
-    AdventurePrj/Private/UI/TootWindow.cpp \
     NNETutor/NNETutor.cpp \
     NNETutor/Private/NNEBasicInfo.cpp \
     NNETutor/Private/NeuralPostProcessingCS.cpp \
     NNETutor/Private/NeuralPostProcessingViewExtension.cpp
 
 DISTFILES += \
-    AdventurePrj.Target.cs \
-    AdventurePrj/AdventurePrj.Build.cs \
-    AdventurePrjEditor.Target.cs \
+    ../NNETutor.uproject \
     NNETutor.Target.cs \
     NNETutor/NNETutor.Build.cs \
     NNETutorEditor.Target.cs
