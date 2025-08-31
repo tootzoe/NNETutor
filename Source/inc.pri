@@ -12,12 +12,14 @@ INCLUDEPATH += "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools
 #  #           "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.42.34433"
 #
 #
+INCLUDEPATH += $$UESRCROOT
 INCLUDEPATH += $$UESRCROOT/Runtime/AdpcmAudioDecoder/Module/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/AdvancedWidgets/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Advertising/Advertising/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Advertising/Android/AndroidAdvertising/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Advertising/IOS/IOSAdvertising/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/AIModule/Public
+INCLUDEPATH += $$UESRCROOT/Runtime/AIModule/Classes
 INCLUDEPATH += $$UESRCROOT/Runtime/Analytics/Analytics/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Analytics/AnalyticsET/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Analytics/AnalyticsSwrve/Public
@@ -70,9 +72,16 @@ INCLUDEPATH += $$UESRCROOT/Runtime/Datasmith/CADKernel/Base/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Datasmith/DatasmithCore/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Datasmith/DirectLink/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/DeveloperSettings/Public
+INCLUDEPATH += $$UESRCROOT/Developer/CollectionManager/Public
+INCLUDEPATH += $$UESRCROOT/Developer/SourceControl/Public
+INCLUDEPATH += $$UESRCROOT/Developer/DeveloperToolSettings/Classes
+INCLUDEPATH += $$UESRCROOT/Developer/AssetTools/Public
+INCLUDEPATH += $$UESRCROOT/Developer/ToolMenus/Public
+INCLUDEPATH += $$UESRCROOT/Developer/MeshReductionInterface/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Engine/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/EngineMessages/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/EngineSettings/Public
+INCLUDEPATH += $$UESRCROOT/Runtime/EngineSettings/Classes
 INCLUDEPATH += $$UESRCROOT/Runtime/Experimental/Animation/Constraints/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Experimental/Chaos/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Experimental/ChaosCore/Public
@@ -101,7 +110,9 @@ INCLUDEPATH += $$UESRCROOT/Runtime/GameMenuBuilder/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/GameplayDebugger/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/GameplayMediaEncoder/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/GameplayTags/Public
+INCLUDEPATH += $$UESRCROOT/Runtime/GameplayTags/Classes
 INCLUDEPATH += $$UESRCROOT/Runtime/GameplayTasks/Public
+INCLUDEPATH += $$UESRCROOT/Runtime/GameplayTasks/Classes
 INCLUDEPATH += $$UESRCROOT/Runtime/GeometryCore/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/GeometryFramework/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/HardwareSurvey/Public
@@ -111,6 +122,7 @@ INCLUDEPATH += $$UESRCROOT/Runtime/ImageCore/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/ImageWrapper/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/ImageWriteQueue/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/InputCore/Public
+INCLUDEPATH += $$UESRCROOT/Runtime/InputCore/Classes
 INCLUDEPATH += $$UESRCROOT/Runtime/InputDevice/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/InstallBundleManager/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/InteractiveToolsFramework/Public
@@ -152,6 +164,7 @@ INCLUDEPATH += $$UESRCROOT/Runtime/NavigationSystem/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Navmesh/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Net/Common/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Net/Core/Public
+INCLUDEPATH += $$UESRCROOT/Runtime/Net/Core/Classes
 INCLUDEPATH += $$UESRCROOT/Runtime/NetworkFile/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/NetworkFileSystem/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Networking/Public
@@ -255,8 +268,63 @@ INCLUDEPATH += $$UESRCROOT/Runtime/Windows/D3D11RHI/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/Windows/WindowsPlatformFeatures/Public
 INCLUDEPATH += $$UESRCROOT/Runtime/XmlParser/Public
 ##
+INCLUDEPATH += $$UESRCROOT/Editor/UnrealEd/Classes
+INCLUDEPATH += $$UESRCROOT/Editor/BlueprintGraph/Public
+INCLUDEPATH += $$UESRCROOT/Editor/BlueprintGraph/Classes
+INCLUDEPATH += $$UESRCROOT/Editor/KismetCompiler/Public
+INCLUDEPATH += $$UESRCROOT/Editor/UnrealEd/Public
+INCLUDEPATH += $$UESRCROOT/Editor/UnrealEd/Classes
+INCLUDEPATH += $$UESRCROOT/Editor/Blutility/Public
+INCLUDEPATH += $$UESRCROOT/Editor/Blutility/Classes
+INCLUDEPATH += $$UESRCROOT/Editor/LevelEditor/Public
+INCLUDEPATH += $$UESRCROOT/Editor/UMGEditor/Public
+INCLUDEPATH += $$UESRCROOT/Editor/UMGEditor/Classes
+##
 INCLUDEPATH += $$UESRCROOT/Runtime/Engine/Classes
+## Editor
+INCLUDEPATH += $$UESRCROOT/../Plugins/Editor/DataValidation/Source/DataValidation/Public
 
+##
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/EnhancedInput/Source/EnhancedInput/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/ChunkDownloader/Source/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/GameFeatures/Source/GameFeatures/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/ModularGameplay/Source/ModularGameplay/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/CommonUI/Source/CommonUI/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/CommonUI/Source/CommonInput/Public
+
+## online subsystem
+INCLUDEPATH += $$UESRCROOT/../Plugins/Online/OnlineSubsystem/Source/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Online/OnlineServices/Source/OnlineServicesInterface/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Online/OnlineSubsystemUtils/Source/OnlineSubsystemUtils/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Online/OnlineFramework/Source/Hotfix/Public
+
+
+##
+## Niagara
+INCLUDEPATH += $$UESRCROOT/../Plugins/FX/Niagara/Source/Niagara/Public
+##
+##
+INCLUDEPATH += $$UESRCROOT/../Plugins/Experimental/StudioTelemetry/Source/StudioTelemetry/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Experimental/AsyncMessageSystem/Source/AsyncMessageSystem/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Experimental/Mover/Source/Mover/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Experimental/MeshModelingToolsetExp/Source/MeshModelingToolsExp/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Experimental/MeshModelingToolsetExp/Source/MeshModelingToolsEditorOnlyExp/Public
+
+##
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/GameplayAbilities/Source/GameplayAbilitiesEditor/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/SignificanceManager/Source/SignificanceManager/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/MeshModelingToolset/Source/MeshModelingTools/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/MeshModelingToolset/Source/ModelingComponents/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/MeshModelingToolset/Source/ModelingComponentsEditorOnly/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/MeshModelingToolset/Source/ModelingOperators/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/MeshModelingToolset/Source/ModelingOperatorsEditorOnly/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/Runtime/MeshModelingToolset/Source/SkeletalMeshModifiers/Public
+## DMX
+INCLUDEPATH += $$UESRCROOT/../Plugins/VirtualProduction/DMX/DMXEngine/Source/DMXRuntime/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/VirtualProduction/DMX/DMXFixtures/Source/DMXFixtures/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/VirtualProduction/DMX/DMXPixelMapping/Source/DMXPixelMappingCore/Public
+INCLUDEPATH += $$UESRCROOT/../Plugins/VirtualProduction/DMX/DMXProtocol/Source/DMXProtocol/Public
 
 
 ## if have problem , try to use 'Intermediate' folder files

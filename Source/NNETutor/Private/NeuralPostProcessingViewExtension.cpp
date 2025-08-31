@@ -178,3 +178,12 @@ bool UNeuralPostProcessing::SetModel(FString RuntimeName, UNNEModelData *ModelDa
 
     return mNeuralPPViewExt->SetModel(RuntimeName,TObjectPtr<UNNEModelData>(ModelData));
 }
+
+
+void FNeuralPostProcessingViewExtension::PreRenderViewFamily_RenderThread(FRDGBuilder &GraphBuilder, FSceneViewFamily &InViewFamily)
+{
+}
+
+void FNeuralPostProcessingViewExtension::PreRenderView_RenderThread(FRDGBuilder &GraphBuilder, FSceneView &InView)
+{
+}

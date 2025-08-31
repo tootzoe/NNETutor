@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-
+echo "++++++++==== Ver: 2025-02-20 =====++++++++++++++"
 
 echo "++++++++====Because EUBP_ClearLiveCodingTmp don't clear *.patch_*.exe, so clear here =====++++++++++++++"
 echo "++++++++==== This script should run *AFTER* closing UnrealEditor =====++++++++++++++"

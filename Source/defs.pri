@@ -16,6 +16,7 @@ DEFINES += "WITH_PLUGIN_SUPPORT=0"
 DEFINES += "USE_LOGGING_IN_SHIPPING=0"
 DEFINES += "UE_BUILD_MINIMAL=1"
 DEFINES += "WITH_EDITOR=1"
+DEFINES += "WITH_GAMEPLAY_DEBUGGER=1"
 DEFINES += "WITH_EDITORONLY_DATA=0"
 DEFINES += "WITH_SERVER_CODE=1"
 DEFINES += "UBT_COMPILED_PLATFORM=Win64"
@@ -66,10 +67,24 @@ DEFINES += "USERFEEDBACK_API="
 DEFINES += "COLLECTIONMANAGER_API="
 ##
 ##
+DEFINES += "MinimalAPI" "ShortTooltip" "AllowedClasses" "defaultconfig" "DisplayName"
+DEFINES += "ThisClass" "EditorPerProjectUserSettings"
+##
 DEFINES += "LogTemp" "Warning"
-DEFINES += "BlueprintType" "Blueprintable" "BlueprintPure" "BlueprintImplementableEvent"
-DEFINES += "BlueprintAssignable" "BlueprintInternalUseOnly" "EditAnywhere" "EditDefaultsOnly"
+DEFINES += "BlueprintAuthorityOnly" "BlueprintCosmetic" "BlueprintNativeEvent"
+DEFINES += "Client" "CustomThunk" "Exec" "CallInEditor"
+DEFINES += "DOREPLIFETIME_ACTIVE_OVERRIDE" "DOREPLIFETIME_CONDITION" "DOREPLIFETIME"
+DEFINES += "Replicated" "ReplicatedUsing" "AllowedClasses"
+DEFINES += "NetMulticast" "Reliable" "Unreliable" "WithValidation"
+DEFINES += "ServiceResponse" "Server" "SealedEvent" "ServiceRequest"
+DEFINES += "BlueprintType" "Blueprintable" "NotBlueprintable" "BlueprintPure" "BlueprintImplementableEvent"
+DEFINES += "BlueprintAssignable" "BlueprintInternalUseOnly" "EditAnywhere" "EditDefaultsOnly" "EditInstanceOnly"
+DEFINES += "VisibleAnywhere" "BlueprintReadOnly" "VisibleDefaultsOnly"
+##
+DEFINES += "Transient" "BindWidget" "notplaceable" "Instanced"
 ##
 ##  Because this macro unfriend with QtCreater , so we redefined they to empty in this editor....
 DEFINES += "checkf" "check" "checkAtCompileTime" "checkCode" "checkfSlow" "checkLockFreePointerList"
 DEFINES += "checkName" "checkNoEntry" "checkNoRecursion" "checkNoReentry" "checkSlow" "checkStats"
+## online subsystem
+DEFINES += "NAME_GameSession" "NAME_None" "_Implementation"

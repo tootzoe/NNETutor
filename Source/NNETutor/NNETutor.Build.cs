@@ -18,7 +18,8 @@ public class NNETutor : ModuleRules
 		
          PublicIncludePaths.AddRange(
                      new string[] {
-                         System.IO.Path.Combine(EngineDirectory, "Source/Runtime/Renderer/Private")
+                         System.IO.Path.Combine(EngineDirectory, "Source/Runtime/Renderer/Private"),
+                         System.IO.Path.Combine(EngineDirectory, "Source/Runtime/Renderer/Internal")
                      }
                  );
 
